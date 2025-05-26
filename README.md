@@ -4,7 +4,8 @@
 
 ### 배포 주소
 
-🔗 [https://web-cafe-prj.vercel.app/](https://web-cafe-prj.vercel.app/)
+🔗 [cafehomepage.vercel.app](cafehomepage.vercel.app)
+
 
 ---
 
