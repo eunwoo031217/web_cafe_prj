@@ -39,7 +39,7 @@
 - `main` 브랜치에 코드가 Push되면 GitHub Actions가 자동으로 실행됩니다.
 - CI 단계에서는 `vite-project/` 디렉토리 기준으로 `npm ci`, `npm run build`를 수행합니다.
 - 이후 배포 단계에서는 `amondnet/vercel-action`을 이용해 Vercel로 자동 배포가 진행됩니다.
-- 빌드 중 필요한 환경변수(`VITE_COFFEE_API_URL`)는 GitHub Secrets를 통해 안전하게 주입됩니다.
+- 빌드 중 필요한 환경변수(`VITE_CAFE_API_URL`)는 GitHub Secrets를 통해 안전하게 주입됩니다.
 
 ---
 
