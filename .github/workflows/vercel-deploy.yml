@@ -1,5 +1,6 @@
 name: Build and Deploy to Vercel
 
+#main 브랜치에 push 또는 pull request 발생 시 워크플로우 실행
 on:
   push:
     branches: [ main ]  
@@ -57,7 +58,7 @@ jobs:
           VITE_CAFE_API_URL: ${{ secrets.VITE_CAFE_API_URL }}
 
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
+        uses: amondnet/vercel-action@v25 #Vercel 배포 액션 사용
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
