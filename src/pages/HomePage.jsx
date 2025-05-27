@@ -30,15 +30,8 @@ function HomePage({ cart, setCart }) {
                     id: item.id,
                     name: item.title,
                     basePrice: 3500, //기본 가격 설정
-                    image: item.image,
+                    image: item.image?.trim() ? item.image : '/default.png', // 빈 문자열도 대체,
                 }));
-
-                formatted.forEach(item => {
-                    if (!item.image || item.image.trim() === '') {
-                        console.warn(`[경고] 이미지 URL이 비어있음 → 메뉴 ID: ${item.id}, 이름: ${item.name}`);
-                    }
-                });
-
                 setMenu(formatted); //메뉴 상태 저장
             })
             .catch(error => {

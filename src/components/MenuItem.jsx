@@ -13,7 +13,12 @@ function MenuItem({ item, onClick }) {
             }}
             onClick={onClick}
         >
-            <img src={item.image ? item.image : '/default.png'} alt={item.name}
+            <img src={item.image || '/default.png'}
+                onError={(e) => {
+                    e.target.onerror = null; // 무한 루프 방지
+                    e.target.src = '/default.png';
+                }}
+                alt={item.name}
                 style={{
                     width: "100%",
                     height: '220px',
