@@ -8,7 +8,7 @@ function HomePage({ cart, setCart }) {
     //.env에 정의한 API 키 (프록시 서버 주소)
     const API_KEY_URL = import.meta.env.VITE_CAFE_API_URL;
     console.log("API URL:", import.meta.env.VITE_CAFE_API_URL);
-    
+
     //메뉴 전체 리스트, 선택된 아이템 상태값
     const [menu, setMenu] = useState([]); //API로 불러온 메뉴
     const [selectedItem, setSelectedItem] = useState(null); //클릭한 메뉴 (모달용)
@@ -32,6 +32,13 @@ function HomePage({ cart, setCart }) {
                     basePrice: 3500, //기본 가격 설정
                     image: item.image,
                 }));
+
+                formatted.forEach(item => {
+                    if (!item.image || item.image.trim() === '') {
+                        console.warn(`[경고] 이미지 URL이 비어있음 → 메뉴 ID: ${item.id}, 이름: ${item.name}`);
+                    }
+                });
+
                 setMenu(formatted); //메뉴 상태 저장
             })
             .catch(error => {
@@ -49,12 +56,12 @@ function HomePage({ cart, setCart }) {
         <div>
             {/* 메뉴 페이지 타이틀 */}
             <h1 style={{ textAlign: "center", marginTop: "30px" }}>Menu</h1>
-            
+
             {/* 추천 룰렛 영역 */}
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <Roulette menu={menu} onSelect={(item) => setSelectedItem(item)} />
             </div>
-            
+
             {/* 메뉴 카드 리스트 영역 */}
             <div style={{
                 display: 'flex',
