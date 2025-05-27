@@ -4,7 +4,7 @@
 
 ### 배포 주소
 
-🔗 [cafehomepage.vercel.app](cafehomepage.vercel.app)
+🔗 [https://cafehomepage.vercel.app](https://cafehomepage.vercel.app)
 
 
 ---
