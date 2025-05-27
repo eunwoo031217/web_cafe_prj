@@ -7,6 +7,7 @@ import Roulette from '../components/Roulette';
 function HomePage({ cart, setCart }) {
     //.env에 정의한 API 키 (프록시 서버 주소)
     const API_KEY_URL = import.meta.env.VITE_CAFE_API_URL;
+    console.log("API URL:", import.meta.env.VITE_CAFE_API_URL);
     
     //메뉴 전체 리스트, 선택된 아이템 상태값
     const [menu, setMenu] = useState([]); //API로 불러온 메뉴
