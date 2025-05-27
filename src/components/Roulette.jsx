@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 //룰렛 추천 컴포넌트
 function Roulette({ menu, onSelect }) {
-  //추천된 메뉴 결과를 저장라는 상태
+  //추천된 메뉴 결과를 저장하는 상태
   const [result, setResult] = useState(null);
   //룰렛이 돌고 있는지 여부를 나타내는 상태
   const [isSpinning, setIsSpinning] = useState(false);
