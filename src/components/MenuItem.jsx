@@ -13,7 +13,7 @@ function MenuItem({ item, onClick }) {
             }}
             onClick={onClick}
         >
-            <img src={item.image} alt={item.name}
+            <img src={item.image || '/default.png'} alt={item.name}
                 style={{
                     width: "100%",
                     height: '220px',
